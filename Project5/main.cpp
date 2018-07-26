@@ -292,7 +292,7 @@ void CL_Matrix_Mult(double* A, double* B, double* C, int M, int N, int K) {
 	status = clEnqueueWriteBuffer(cmdQueue, bufB, CL_FALSE, 0,(N*K)*(sizeof(double)), B, 0, NULL, NULL);
 	//error_checker("clEnqueueWriteBuffer for B", status);
 
-	// vectorAdd.cl 을 읽어서 source에 저장함 
+	// Mat_Mult.cl 을 읽어서 source에 저장함 
 	//readKernelFile이라는 함수를 만들어서 사용
 	long sizeSource;
 	const char* source = readKernelFile("Mat_Mult.cl", &sizeSource);
@@ -326,8 +326,6 @@ void CL_Matrix_Mult(double* A, double* B, double* C, int M, int N, int K) {
 	//실행을 위해 워크아이템의 인덱스 공간(글로벌 워크사이즈)를 정의함
 	//워크그룹 크기(로컬 워크 사이즈)가 필요하지는 않지만 사용될 수 있다. 
 	size_t globalWorkSize[2] = {M, K};
-
-	//워크아이템의 '항목'이 있다. 
 
 	//커널을 실행함
 	cl_event event;
