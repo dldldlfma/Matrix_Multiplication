@@ -122,10 +122,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="basic_function.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mat_Mult.cl" />
+    <None Include="Mat_Mult2.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="basic_function.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
