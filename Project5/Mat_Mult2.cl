@@ -1,9 +1,9 @@
 __kernel void mat_mult(const __global double* A,
-					   const __global double* B,
-							 __global double* C,
-					   const int M,
-					   const int N,
-					   const int K)
+		       const __global double* B,
+			     __global double* C,
+				    const int M,
+				    const int N,
+				    const int K)
 {
 
 	// Thread identifiers
